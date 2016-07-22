@@ -1,0 +1,58 @@
+{
+  "name": "react-starter-kit",
+  "version": "0.0.1",
+  "private": true,
+  "description": "React app starter kit.",
+  "author": "Eric Chai",
+  "license": "ISC",
+  "keywords": [
+    "react"
+  ],
+
+
+  "main": "webpack.config.js",
+
+  "dependencies": {},
+
+  "devDependencies": {
+    "concurrently": "*",
+
+    "gulp": "*",
+    "gulp-util": "*",
+    "gulp-rename": "*",
+    "gulp-cached": "*",
+    "gulp-html-minifier": "*",
+    "del": "*",
+
+    "react": "*",
+    "react-dom": "*",
+
+    "babel-core": "*",
+    "babel-plugin-add-module-exports": "*",
+    "babel-plugin-react-html-attrs": "*",
+    "babel-plugin-transform-class-properties": "*",
+    "babel-plugin-transform-decorators-legacy": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babel-preset-stage-0": "*",
+
+    "browser-sync": "*",
+
+    "babel-loader": "*",
+    "webpack": "*",
+    "webpack-stream": "*",
+    "webpack-hot-middleware": "*",
+    "webpack-dev-middleware": "*",
+    "react-hot-loader": "*",
+    "webpack-module-hot-accept": "*"
+  },
+
+  "scripts": {
+    "cplibs": "gulp copy-libs",
+    "w": "concurrently 'gulp watch' 'compass watch -c config/compass.rb'",
+    "build": "concurrently 'compass compile -c config/compass.rb' 'gulp build'",
+    "prod": "npm run clean && NODE_ENV=prod npm run build",
+    "clean": "gulp clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
