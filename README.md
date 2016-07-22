@@ -1,4 +1,4 @@
-# React Starter Kit
+# ReactJS Starter Kit
 
 根据 [Max Barry][twitter:mxbrry] 的一篇文章
 [Making React, Webpack, BrowserSync & Gulp play nice and hot reload][mxbrry's-article]

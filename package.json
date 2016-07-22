@@ -2,7 +2,7 @@
   "name": "react-starter-kit",
   "version": "0.0.1",
   "private": true,
-  "description": "React app starter kit.",
+  "description": "ReactJS app starter kit.",
   "author": "Eric Chai",
   "license": "ISC",
   "keywords": [
@@ -12,7 +12,9 @@
 
   "main": "webpack.config.js",
 
-  "dependencies": {},
+  "dependencies": {
+    "emojione": "*"
+  },
 
   "devDependencies": {
     "concurrently": "*",
@@ -48,6 +50,7 @@
   },
 
   "scripts": {
+    "start": "npm run w",
     "cplibs": "gulp copy-libs",
     "w": "concurrently 'gulp watch' 'compass watch -c config/compass.rb'",
     "build": "concurrently 'compass compile -c config/compass.rb' 'gulp build'",
