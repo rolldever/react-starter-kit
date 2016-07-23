@@ -84,8 +84,8 @@ gulp.task('watch', ['html', 'other-files'], function (callback) {
     },
 
     files: [
-      pkg.dist.css + '/**/*.css',
-      pkg.dist.html + '/**/*.html',
+      `${pkg.dist.css}/**/*.css`,
+      `${pkg.dist.html}/**/*.html`,
     ],
   });
 });

@@ -42,13 +42,12 @@ const plugins = (function () {
   });
 
   if (debugMode) {
-    return [occurenceOrder, noErrors, hotModuleReplacement];
+    return [occurenceOrder, hotModuleReplacement, noErrors];
   }
   return [dedup, occurenceOrder, uglifyJS, define];
 }());
 
 const webpackSettings = {
-  context: srcPath,
   debug: debugMode,
   plugins,
 

@@ -1,3 +1,23 @@
 @charset 'utf-8';
 
 @import "compass/css3";
+
+// 定义默认字体系列。
+@mixin default-font-family {
+  $en: ('Helvetica Neue', Helvetica, Roboto, Arial);
+  $cn: ('PingFang SC', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei');
+
+  font-family: ('Source Sans Pro', $en, $cn, sans-serif);
+  font-weight: 400;
+}
+
+
+@mixin font-awesome($content) {
+  @include content($content);
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
