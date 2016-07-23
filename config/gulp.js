@@ -1,7 +1,6 @@
 const path = require('path');
 
 const gulp = require('gulp');
-const del = require('del');
 const gutil = require('gulp-util');
 const rename = require('gulp-rename');
 const cache = require('gulp-cached');
@@ -17,7 +16,7 @@ const {debugMode, pkg} = require('./env');
 const webpackSettings = require('./webpack');
 const bundler = webpack(webpackSettings);
 
-gulp.task('copy-libs', function () {
+gulp.task('vendor', function () {
   const {location, libs} = require('./vendor');
   libs.forEach(obj => {
     const src = `${location[obj.type]}/${obj.lib}/${obj.src}`;

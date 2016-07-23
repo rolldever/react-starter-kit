@@ -34,7 +34,6 @@
     "concurrently": "*",
 
     "gulp": "*",
-    "del": "*",
     "gulp-cached": "*",
     "gulp-html-minifier": "*",
     "gulp-rename": "*",
@@ -52,7 +51,7 @@
 
   "scripts": {
     "start": "npm run w",
-    "cplibs": "gulp copy-libs",
+    "vendor": "gulp vendor",
     "w": "concurrently 'gulp watch' 'compass watch -c config/compass.rb'",
     "build": "concurrently 'compass compile -c config/compass.rb' 'gulp build'",
     "prod": "npm run clean && npm run cplibs && NODE_ENV=prod npm run build",
