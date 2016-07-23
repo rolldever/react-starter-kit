@@ -1,14 +1,13 @@
 {
-  "name": "react-starter-kit",
+  "name": "react-tutorial",
   "version": "0.0.1",
   "private": true,
-  "description": "ReactJS app starter kit.",
+  "description": "ReactJS tutorial.",
   "author": "Eric Chai",
   "license": "ISC",
   "keywords": [
     "react"
   ],
-
 
   "main": "webpack.config.js",
 
@@ -17,17 +16,10 @@
   },
 
   "devDependencies": {
-    "concurrently": "*",
-
-    "gulp": "*",
-    "gulp-util": "*",
-    "gulp-rename": "*",
-    "gulp-cached": "*",
-    "gulp-html-minifier": "*",
-    "del": "*",
-
     "react": "*",
     "react-dom": "*",
+    "react-router": "*",
+    "history": "*",
 
     "babel-core": "*",
     "babel-plugin-add-module-exports": "*",
@@ -39,15 +31,24 @@
     "babel-preset-stage-0": "*",
 
     "browser-sync": "*",
+    "concurrently": "*",
 
-    "babel-loader": "*",
+    "gulp": "*",
+    "del": "*",
+    "gulp-cached": "*",
+    "gulp-html-minifier": "*",
+    "gulp-rename": "*",
+    "gulp-util": "*",
+
     "webpack": "*",
-    "webpack-stream": "*",
-    "webpack-hot-middleware": "*",
-    "webpack-dev-middleware": "*",
+    "babel-loader": "*",
     "react-hot-loader": "*",
-    "webpack-module-hot-accept": "*"
+    "webpack-dev-middleware": "*",
+    "webpack-hot-middleware": "*",
+    "webpack-module-hot-accept": "*",
+    "webpack-stream": "*"
   },
+
 
   "scripts": {
     "start": "npm run w",
@@ -55,7 +56,7 @@
     "w": "concurrently 'gulp watch' 'compass watch -c config/compass.rb'",
     "build": "concurrently 'compass compile -c config/compass.rb' 'gulp build'",
     "prod": "npm run clean && npm run cplibs && NODE_ENV=prod npm run build",
-    "clean": "gulp clean",
+    "clean": "rm -rf dist .sass-cache",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

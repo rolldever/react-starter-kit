@@ -41,8 +41,11 @@ gulp.task('other-files', function () {
   const include = ['**/*.txt', '**/*.json', '**/*.xml', '**/*.ico'];
   const src = include.map(g => `${pkg.src.root}/${g}`)
     .concat(`!${pkg.src.root}/img/**/*`, `!${pkg.src.root}/font/**/*`);
-  return gulp.src(src)
+  gulp.src(src)
     .pipe(cache('other-files'))
+    .pipe(gulp.dest(pkg.dist.root));
+
+  gulp.src(`${pkg.src.root}/{img,font}/**`)
     .pipe(gulp.dest(pkg.dist.root));
 });
 
@@ -56,15 +59,6 @@ gulp.task('js', function (callback) {
 
 
 gulp.task('build', ['html', 'js', 'other-files']);
-
-gulp.task('clean', function () {
-  return del([
-    '.sass-cache',
-    'dist/**/*',
-    '!dist/img',
-    '!dist/font',
-  ]);
-});
 
 
 gulp.task('watch', ['html', 'other-files'], function (callback) {
