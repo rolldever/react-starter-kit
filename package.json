@@ -54,7 +54,7 @@
     "cplibs": "gulp copy-libs",
     "w": "concurrently 'gulp watch' 'compass watch -c config/compass.rb'",
     "build": "concurrently 'compass compile -c config/compass.rb' 'gulp build'",
-    "prod": "npm run clean && NODE_ENV=prod npm run build",
+    "prod": "npm run clean && npm run cplibs && NODE_ENV=prod npm run build",
     "clean": "gulp clean",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
