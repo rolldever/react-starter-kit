@@ -65,6 +65,4 @@ npm-debug.log
 
 
 # React Starter Kit
-/dist/*
-!/dist/img/
-!/dist/font/
+/dist
