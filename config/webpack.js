@@ -38,7 +38,13 @@ const plugins = (function () {
     sourcemap: false,
   });
   const define = new webpack.DefinePlugin({
-    'process.env': { 'NODE_ENV': JSON.stringify('production') },
+    'process.env': {
+      'NODE_ENV': JSON.stringify(debugMode ? 'debug' : 'production'),
+    },
+    '__PRODUCTION_MODE': JSON.stringify(!debugMode),
+    '__DEBUG_MODE':      JSON.stringify(debugMode),
+    '__APP_NAME':        JSON.stringify(pkg.name),
+    '__APP_VERSION':     JSON.stringify(pkg.version),
   });
 
   if (debugMode) {

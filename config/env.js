@@ -22,4 +22,7 @@ pkg.dist = {
   vendor: 'dist/vendor',
 };
 
+const packageConfig = require('../package.json');
+[pkg.name, pkg.version] = [packageConfig.name, packageConfig.version];
+
 module.exports = { debugMode, pkg };
