@@ -36,18 +36,6 @@ gulp.task('html', function () {
     .pipe(gulp.dest(pkg.dist.html));
 });
 
-gulp.task('other-files', function () {
-  const include = ['**/*.txt', '**/*.json', '**/*.xml', '**/*.ico'];
-  const src = include.map(g => `${pkg.src.root}/${g}`)
-    .concat(`!${pkg.src.root}/img/**/*`, `!${pkg.src.root}/font/**/*`);
-  gulp.src(src)
-    .pipe(cache('other-files'))
-    .pipe(gulp.dest(pkg.dist.root));
-
-  gulp.src(`${pkg.src.root}/{img,font}/**`)
-    .pipe(gulp.dest(pkg.dist.root));
-});
-
 gulp.task('js', function (callback) {
   webpack(webpackSettings, (err, stats) => {
     if (err) throw new gutil.PluginError('js', err);
@@ -56,11 +44,25 @@ gulp.task('js', function (callback) {
   });
 });
 
+gulp.task('assets', function () {
+  return gulp.src(`${pkg.src.root}/{img,font}/**`)
+    .pipe(gulp.dest(pkg.dist.root));
+});
 
-gulp.task('build', ['html', 'js', 'other-files']);
+gulp.task('other-files', function () {
+  const include = ['**/*.txt', '**/*.json', '**/*.xml', '**/*.ico'];
+  const src = include.map(g => `${pkg.src.root}/${g}`)
+    .concat(`!${pkg.src.root}/img/**/*`, `!${pkg.src.root}/font/**/*`);
+  return gulp.src(src)
+    .pipe(cache('other-files'))
+    .pipe(gulp.dest(pkg.dist.root));
+});
 
 
-gulp.task('watch', ['html', 'other-files'], function (callback) {
+gulp.task('build', ['html', 'js', 'assets', 'other-files']);
+
+
+gulp.task('watch', ['html'], function (callback) {
   gulp.watch(`${pkg.src.html}/**/*.html`, ['html']);
 
   browserSync({
