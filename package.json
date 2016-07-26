@@ -9,8 +9,6 @@
     "react"
   ],
 
-  "main": "webpack.config.js",
-
   "dependencies": {
     "emojione": "*"
   },

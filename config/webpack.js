@@ -11,7 +11,7 @@ const distPath = path.join(cwd, pkg.dist.js);
 // Babel loaders
 const babelLoaders = (function () {
   const presets = ['react', 'es2015', 'stage-0'];
-  const plugins = ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'];
+  const plugins = ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties'];
 
   const presetsQuery = presets.map(p => `presets[]=${p}`).join(',');
   const pluginsQuery = plugins.map(p => `plugins[]=${p}`).join(',');
