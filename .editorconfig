@@ -16,6 +16,6 @@ indent_style = space
 [*.md]
 trim_trailing_whitespace = false
 
-[*.rust]
+[*.rs]
 indent_size = 4
 indent_style = space
