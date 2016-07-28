@@ -10,15 +10,21 @@
   ],
 
   "dependencies": {
-    "emojione": "*"
-  },
-
-  "devDependencies": {
     "react": "*",
     "react-dom": "*",
     "react-router": "*",
     "history": "*",
 
+    "redux": "*",
+    "redux-thunk": "*",
+    "redux-promise": "*",
+    "redux-logger": "*",
+    "react-redux": "*",
+
+    "emojione": "*"
+  },
+
+  "devDependencies": {
     "babel-core": "*",
     "babel-plugin-add-module-exports": "*",
     "babel-plugin-react-html-attrs": "*",
